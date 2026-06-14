@@ -6,10 +6,13 @@
   <title>ติดต่อเรา แผนที่สำนักงานบัญชี และส่งข้อความ | Accur Advisory</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="ติดต่อสำนักงานบัญชี Accur Advisory โทร 02-123-4567 แอดไลน์ @accuradvisory แผนที่ที่ตั้งสำนักงานเขตสาทร กรุงเทพฯ พร้อมฟอร์มส่งข้อความขอคำปรึกษาฟรี">
+  <meta name="description" content="ติดต่อสำนักงานบัญชี Accur Advisory แอดไลน์ 11aprily อีเมล tonporza01@gmail.com แผนที่ที่ตั้งสำนักงานเขตสาทร กรุงเทพฯ พร้อมฟอร์มส่งข้อความขอคำปรึกษาฟรี">
   <meta name="keywords" content="ติดต่อสำนักงานบัญชี, แผนที่สำนักงานบัญชี, ที่อยู่สำนักงานบัญชี, เบอร์โทรทำบัญชี, สาทร, กรุงเทพ">
-  <meta name="author" content="Accur Advisory Co., Ltd.">
+  <meta name="author" content="AP Web Development">
   <meta name="robots" content="index, follow">
+  
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://www.accuradvisory.com/contact.html">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -21,6 +24,11 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -29,10 +37,10 @@
 </head>
 <body>
 
-  <!-- FLOATING LINE OA BUTTON -->
-  <a href="https://line.me/ti/p/@accuradvisory" target="_blank" class="floating-line" id="floating-line-button">
-    <i class="fab fa-line"></i>
-    <span>คุยกับผู้เชี่ยวชาญ</span>
+  <!-- FLOATING CONTACT BUTTON -->
+  <a href="contact.html" class="floating-line" id="floating-line-button" style="background: var(--bg-gradient); color: #ffffff; box-shadow: var(--shadow-premium), var(--shadow-blue-glow);">
+    <i class="fas fa-file-invoice"></i>
+    <span>ติดต่อเพื่อขอใบเสนอราคา</span>
   </a>
 
   <!-- HEADER & NAVIGATION -->
@@ -46,7 +54,7 @@
         </div>
       </a>
       
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="main-nav-menu">
         <a href="index.html" class="nav-link">หน้าแรก</a>
         <a href="services.html" class="nav-link">บริการของเรา</a>
         <a href="pricing.html" class="nav-link">อัตราค่าบริการ</a>
@@ -55,19 +63,17 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="tel:021234567" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.9rem;">
-          <i class="fas fa-phone"></i> 02-123-4567
-        </a>
-        <a href="https://line.me/ti/p/@accuradvisory" target="_blank" class="btn btn-line" style="padding: 8px 18px; font-size: 0.9rem;">
-          <i class="fab fa-line"></i> Line OA
+        <a href="contact.html" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.9rem;">
+          <i class="fas fa-file-invoice"></i> ติดต่อเพื่อขอใบเสนอราคา
         </a>
       </div>
 
-      <div class="menu-toggle" id="mobile-menu-btn">
+      <!-- a11y Accessible Button replacement for mobile menu toggle -->
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="main-nav-menu">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </div>
   </header>
 
@@ -96,6 +102,15 @@
         </div>
 
         <div class="contact-info">
+          <!-- Contact Person -->
+          <div class="contact-method">
+            <div class="contact-icon"><i class="fas fa-user-check"></i></div>
+            <div class="contact-details">
+              <h3>ผู้ประสานงานหลัก (Contact Person)</h3>
+              <p>AP Web Development</p>
+            </div>
+          </div>
+
           <!-- Office Address -->
           <div class="contact-method">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -105,13 +120,21 @@
             </div>
           </div>
 
-          <!-- Phone Calls -->
+          <!-- Phone (Contact for quotation) -->
           <div class="contact-method">
-            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-icon"><i class="fas fa-file-invoice-dollar"></i></div>
             <div class="contact-details">
-              <h3>เบอร์โทรศัพท์</h3>
-              <p><a href="tel:021234567">02-123-4567</a> (ฝ่ายบริการลูกค้า)</p>
-              <p><a href="tel:0898765432">089-876-5432</a> (สายตรงที่ปรึกษาภาษี)</p>
+              <h3>ติดต่อสอบถามราคา</h3>
+              <p>ติดต่อเพื่อขอใบเสนอราคา (Contact for quotation)</p>
+            </div>
+          </div>
+
+          <!-- Line ID -->
+          <div class="contact-method">
+            <div class="contact-icon"><i class="fab fa-line"></i></div>
+            <div class="contact-details">
+              <h3>Line OA</h3>
+              <p>Line ID: <strong><a href="https://line.me/ti/p/~11aprily" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">11aprily</a></strong></p>
             </div>
           </div>
 
@@ -120,8 +143,7 @@
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div class="contact-details">
               <h3>อีเมล</h3>
-              <p><a href="mailto:info@accuradvisory.com">info@accuradvisory.com</a></p>
-              <p><a href="mailto:tax@accuradvisory.com">tax@accuradvisory.com</a></p>
+              <p><a href="mailto:tonporza01@gmail.com">tonporza01@gmail.com</a></p>
             </div>
           </div>
 
@@ -131,7 +153,7 @@
             <div class="contact-details">
               <h3>เวลาทำการ</h3>
               <p>วันจันทร์ - วันศุกร์: 08:30 น. - 17:30 น.</p>
-              <p>วันเสาร์ - อาทิตย์: ปิดทำการ (แอดไลน์ฝากข้อความได้ตลอด 24 ชั่วโมง)</p>
+              <p>วันเสาร์ - อาทิตย์: ปิดทำการ (ติดต่อรับเรื่องทางช่องทางออนไลน์ได้ตลอด 24 ชั่วโมง)</p>
             </div>
           </div>
         </div>
@@ -140,10 +162,9 @@
         <div class="contact-social-box">
           <h4>ช่องทางโซเชียลมีเดีย</h4>
           <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://line.me/ti/p/@accuradvisory" target="_blank" class="social-link line-color"><i class="fab fa-line"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="contact.html" class="social-link" aria-label="ติดต่อเพื่อขอใบเสนอราคา"><i class="fas fa-file-invoice"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -161,12 +182,12 @@
             <!-- Name -->
             <div class="form-group">
               <label for="name">ชื่อ-นามสกุล หรือชื่อบริษัท <span style="color: #ef4444;">*</span></label>
-              <input type="text" id="name" class="form-input" placeholder="ตัวอย่าง: สมชาย รักดี" required>
+              <input type="text" id="name" class="form-input" placeholder="ตัวอย่าง: สมชาย รักดี" autocomplete="name" required>
             </div>
             <!-- Email -->
             <div class="form-group">
               <label for="email">อีเมลติดต่อ <span style="color: #ef4444;">*</span></label>
-              <input type="email" id="email" class="form-input" placeholder="example@domain.com" required>
+              <input type="email" id="email" class="form-input" placeholder="example@domain.com" autocomplete="email" required>
             </div>
           </div>
 
@@ -174,7 +195,7 @@
             <!-- Phone -->
             <div class="form-group">
               <label for="phone">เบอร์โทรศัพท์มือถือ <span style="color: #ef4444;">*</span></label>
-              <input type="tel" id="phone" class="form-input" placeholder="0891234567" required>
+              <input type="tel" id="phone" class="form-input" placeholder="0891234567" autocomplete="tel" required>
             </div>
             <!-- Subject -->
             <div class="form-group">
@@ -198,7 +219,7 @@
 
           <!-- Submit Button -->
           <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
-            <i class="fas fa-paper-plane"></i> ส่งข้อความข้อมูลติดต่อ
+            <i class="fas fa-paper-plane"></i> ส่งข้อความติดต่อ
           </button>
         </form>
       </div>
@@ -306,10 +327,10 @@
         </a>
         <p>สำนักงานบัญชีและที่ปรึกษาภาษีอากรระดับมาตรฐานสากล ให้บริการรับทำบัญชี ปิดงบการเงิน วางแผนภาษี และจดทะเบียนบริษัทครบวงจร เพื่อการเติบโตอย่างปลอดภัยของธุรกิจคุณ</p>
         <div class="social-links">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://line.me/ti/p/@accuradvisory" target="_blank" class="social-link line-color"><i class="fab fa-line"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="contact.html" class="social-link" aria-label="ติดต่อเพื่อขอใบเสนอราคา"><i class="fas fa-file-invoice"></i></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
@@ -336,18 +357,27 @@
       </div>
 
       <div class="footer-col footer-newsletter">
-        <h3>รับข่าวสารสาระภาษี</h3>
-        <p>ติดตามความรู้ด้านการทำบัญชี สิทธิลดหย่อนภาษี และข่าวสารธุรกิจที่ผู้ประกอบการควรรู้ ส่งตรงถึงอีเมลของคุณทุกสัปดาห์</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('ขอบคุณสำหรับการสมัครรับข่าวสารจากเรา!'); this.reset();">
-          <input type="email" class="newsletter-input" placeholder="อีเมลของคุณ" required>
-          <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-        </form>
+        <h3>ข้อมูลติดต่อ</h3>
+        <div class="footer-contact-info" style="margin-top: 15px;">
+          <div class="footer-contact-item">
+            <i class="fab fa-line"></i>
+            <span>Line ID: <a href="https://line.me/ti/p/~11aprily" target="_blank" rel="noopener noreferrer" style="color: var(--secondary); text-decoration: underline;">11aprily</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>Email: tonporza01@gmail.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>อาคารสาทรสแควร์ ออฟฟิศทาวเวอร์, กรุงเทพฯ</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <div class="copyright">
-        &copy; 2026 บริษัท แอคเคอร์ แอดไวซอรี่ จำกัด. สงวนลิขสิทธิ์ทั้งหมด.
+        Portfolio Demo Project | Created by AP Web Development
       </div>
       <div class="footer-bottom-links">
         <a href="#">นโยบายความเป็นส่วนตัว</a>

@@ -11,14 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // Run once in case page loads scrolled
 
-  // --- MOBILE MENU TOGGLE ---
+  // --- MOBILE MENU TOGGLE & ACCESSIBILITY ---
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
+      const isActive = menuToggle.classList.toggle('active');
       navMenu.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    });
+
+    // Keyboard navigation (Enter or Space key) for accessibility
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isActive = menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      }
     });
 
     // Close menu when clicking a link
@@ -27,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
   }

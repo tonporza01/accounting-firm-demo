@@ -8,12 +8,15 @@
   <!-- SEO Meta Tags -->
   <meta name="description" content="Accur Advisory บริการรับทำบัญชี ยื่นภาษี ตรวจสอบบัญชี วางแผนภาษี และจดทะเบียนบริษัทครบวงจร โดยผู้สอบบัญชีรับอนุญาต (CPA) และผู้เชี่ยวชาญ ปลอดภัย ถูกต้องตามกฎหมาย 100%">
   <meta name="keywords" content="รับทำบัญชี, สำนักงานบัญชี, ยื่นภาษี, วางแผนภาษี, ตรวจสอบบัญชี, จดทะเบียนบริษัท, จดทะเบียนห้างหุ้นส่วน, ที่ปรึกษาภาษี, CPA, TA">
-  <meta name="author" content="Accur Advisory Co., Ltd.">
+  <meta name="author" content="AP Web Development">
   <meta name="robots" content="index, follow">
+  
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://www.accuradvisory.com/index.html">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.accuradvisory.com/">
+  <meta property="og:url" content="https://www.accuradvisory.com/index.html">
   <meta property="og:title" content="Accur Advisory | สำนักงานบัญชีและที่ปรึกษาภาษีอากรครบวงจร">
   <meta property="og:description" content="บริการรับทำบัญชี ยื่นภาษี ตรวจสอบบัญชี และวางแผนภาษีครบวงจร โดยผู้สอบบัญชีรับอนุญาต (CPA) มั่นใจในความถูกต้องและบริการที่เป็นเลิศ">
   <meta property="og:image" content="images/accounting_hero.png">
@@ -21,18 +24,47 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org JSON-LD Structured Data for Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Accur Advisory",
+    "image": "https://www.accuradvisory.com/images/accounting_hero.png",
+    "description": "สำนักงานบัญชีและที่ปรึกษาภาษีอากรครบวงจร ให้บริการรับทำบัญชี ปิดงบการเงิน วางแผนภาษี และจดทะเบียนบริษัทครบวงจร",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ชั้น 24 อาคารสาทรสแควร์ ออฟฟิศทาวเวอร์, 98 ถนนสาทรเหนือ, แขวงสีลม, เขตบางรัก",
+      "addressLocality": "กรุงเทพมหานคร",
+      "postalCode": "10500",
+      "addressCountry": "TH"
+    },
+    "email": "tonporza01@gmail.com",
+    "url": "https://www.accuradvisory.com/index.html",
+    "creator": {
+      "@type": "Organization",
+      "name": "AP Web Development"
+    }
+  }
+  </script>
 </head>
 <body>
 
-  <!-- FLOATING LINE OA BUTTON -->
-  <a href="https://line.me/ti/p/@accuradvisory" target="_blank" class="floating-line" id="floating-line-button">
-    <i class="fab fa-line"></i>
-    <span>คุยกับผู้เชี่ยวชาญ</span>
+  <!-- FLOATING CONTACT BUTTON -->
+  <a href="contact.html" class="floating-line" id="floating-line-button" aria-label="ติดต่อเพื่อขอใบเสนอราคา" style="background: var(--bg-gradient); color: #ffffff; box-shadow: var(--shadow-premium), var(--shadow-blue-glow);">
+    <i class="fas fa-file-invoice"></i>
+    <span>ติดต่อเพื่อขอใบเสนอราคา</span>
   </a>
 
   <!-- HEADER & NAVIGATION -->
@@ -46,7 +78,7 @@
         </div>
       </a>
       
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="main-nav-menu">
         <a href="index.html" class="nav-link active">หน้าแรก</a>
         <a href="services.html" class="nav-link">บริการของเรา</a>
         <a href="pricing.html" class="nav-link">อัตราค่าบริการ</a>
@@ -55,19 +87,17 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="tel:021234567" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.9rem;">
-          <i class="fas fa-phone"></i> 02-123-4567
-        </a>
-        <a href="https://line.me/ti/p/@accuradvisory" target="_blank" class="btn btn-line" style="padding: 8px 18px; font-size: 0.9rem;">
-          <i class="fab fa-line"></i> Line OA
+        <a href="contact.html" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.9rem;">
+          <i class="fas fa-file-invoice"></i> ติดต่อเพื่อขอใบเสนอราคา
         </a>
       </div>
 
-      <div class="menu-toggle" id="mobile-menu-btn">
+      <!-- a11y Accessible Button replacement for mobile menu toggle -->
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="main-nav-menu">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </div>
   </header>
 
@@ -89,7 +119,7 @@
             ประเมินค่าบริการเบื้องต้น <i class="fas fa-calculator"></i>
           </a>
           <a href="contact.html" class="btn btn-outline">
-            ปรึกษาครั้งแรกฟรี <i class="fas fa-chevron-right"></i>
+            ติดต่อเพื่อขอใบเสนอราคา <i class="fas fa-chevron-right"></i>
           </a>
         </div>
         <div class="hero-stats">
@@ -110,7 +140,7 @@
       <div class="hero-image-container fade-in-up" style="transition-delay: 0.2s;">
         <div class="hero-image-decor"></div>
         <div class="hero-image-wrapper">
-          <img src="images/accounting_hero.png" alt="สำนักงานบัญชี Accur Advisory บริการรับทำบัญชีภาษีอากร">
+          <img src="images/accounting_hero.png" alt="สำนักงานบัญชี Accur Advisory บริการรับทำบัญชีภาษีอากร" width="600" height="470">
         </div>
         <div class="hero-badge-card">
           <div class="hero-badge-icon">
@@ -204,7 +234,7 @@
   <section class="section-padding bg-light">
     <div class="container why-us-grid">
       <div class="why-us-image fade-in-up">
-        <img src="images/accounting_consulting.png" alt="ผู้เชี่ยวชาญสำนักงานบัญชีคอยให้คำปรึกษาภาษี">
+        <img src="images/accounting_consulting.png" alt="ผู้เชี่ยวชาญสำนักงานบัญชีคอยให้คำปรึกษาภาษี" width="500" height="380" loading="lazy">
         <div class="why-us-stats-overlay">
           <h3>99.8%</h3>
           <p>ความถูกต้องของรายงาน</p>
@@ -281,7 +311,7 @@
             <li class="disabled"><i class="fas fa-times-circle"></i> ปิดงบการเงินประจำปีและยื่นกระทรวง (มีค่าธรรมเนียมปิดงบแยก)</li>
             <li class="disabled"><i class="fas fa-times-circle"></i> ที่ปรึกษาภาษีระดับสูงทางโทรศัพท์ไม่จำกัด</li>
           </ul>
-          <a href="contact.html?package=starter" class="btn btn-outline" style="width: 100%;">สนใจแพ็คเกจนี้</a>
+          <a href="contact.html?package=starter" class="btn btn-outline" style="width: 100%;">ติดต่อเพื่อขอใบเสนอราคา</a>
         </div>
 
         <!-- Growth Package -->
@@ -302,7 +332,7 @@
             <li><i class="fas fa-check-circle"></i> ฟรี! ที่ปรึกษาวางแผนภาษี 2 ชม./เดือน</li>
             <li class="disabled"><i class="fas fa-times-circle"></i> บริการปิดงบประจำปีฟรี (มีส่วนลดปิดงบ 50%)</li>
           </ul>
-          <a href="contact.html?package=growth" class="btn btn-secondary" style="width: 100%;">เลือกแพ็คเกจยอดนิยม</a>
+          <a href="contact.html?package=growth" class="btn btn-secondary" style="width: 100%;">ติดต่อเพื่อขอใบเสนอราคา</a>
         </div>
 
         <!-- Corporate Package -->
@@ -323,7 +353,7 @@
             <li><i class="fas fa-check-circle"></i> ปิดงบการเงินประจำปีพร้อมยื่นกระทรวงฟรี</li>
             <li><i class="fas fa-check-circle"></i> ประสานงานและเตรียมการสำหรับการตรวจสอบบัญชี</li>
           </ul>
-          <a href="contact.html?package=corporate" class="btn btn-outline" style="width: 100%;">ติดต่อสอบถามเพิ่มเติม</a>
+          <a href="contact.html?package=corporate" class="btn btn-outline" style="width: 100%;">ติดต่อเพื่อขอใบเสนอราคา</a>
         </div>
       </div>
 
@@ -406,10 +436,7 @@
         </div>
         <div class="cta-actions">
           <a href="contact.html" class="btn btn-secondary">
-            <i class="fas fa-envelope"></i> ส่งข้อมูลให้เราติดต่อกลับ
-          </a>
-          <a href="https://line.me/ti/p/@accuradvisory" target="_blank" class="btn btn-line">
-            <i class="fab fa-line"></i> แอดไลน์ปรึกษาฟรี
+            <i class="fas fa-file-invoice"></i> ติดต่อเพื่อขอใบเสนอราคา
           </a>
         </div>
       </div>
@@ -429,10 +456,10 @@
         </a>
         <p>สำนักงานบัญชีและที่ปรึกษาภาษีอากรระดับมาตรฐานสากล ให้บริการรับทำบัญชี ปิดงบการเงิน วางแผนภาษี และจดทะเบียนบริษัทครบวงจร เพื่อการเติบโตอย่างปลอดภัยของธุรกิจคุณ</p>
         <div class="social-links">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://line.me/ti/p/@accuradvisory" target="_blank" class="social-link line-color"><i class="fab fa-line"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="contact.html" class="social-link" aria-label="Contact for quotation"><i class="fas fa-file-invoice"></i></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
@@ -459,18 +486,27 @@
       </div>
 
       <div class="footer-col footer-newsletter">
-        <h3>รับข่าวสารสาระภาษี</h3>
-        <p>ติดตามความรู้ด้านการทำบัญชี สิทธิลดหย่อนภาษี และข่าวสารธุรกิจที่ผู้ประกอบการควรรู้ ส่งตรงถึงอีเมลของคุณทุกสัปดาห์</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('ขอบคุณสำหรับการสมัครรับข่าวสารจากเรา!'); this.reset();">
-          <input type="email" class="newsletter-input" placeholder="อีเมลของคุณ" required>
-          <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-        </form>
+        <h3>ข้อมูลติดต่อ</h3>
+        <div class="footer-contact-info" style="margin-top: 15px;">
+          <div class="footer-contact-item">
+            <i class="fab fa-line"></i>
+            <span>Line ID: <a href="https://line.me/ti/p/~11aprily" target="_blank" rel="noopener noreferrer" style="color: var(--secondary); text-decoration: underline;">11aprily</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>Email: tonporza01@gmail.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>อาคารสาทรสแควร์ ออฟฟิศทาวเวอร์, กรุงเทพฯ</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <div class="copyright">
-        &copy; 2026 บริษัท แอคเคอร์ แอดไวซอรี่ จำกัด. สงวนลิขสิทธิ์ทั้งหมด.
+        Portfolio Demo Project | Created by AP Web Development
       </div>
       <div class="footer-bottom-links">
         <a href="#">นโยบายความเป็นส่วนตัว</a>
